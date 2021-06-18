@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/person"
+        android:id="@+id/all_currencies"
         android:icon="@drawable/ic_baseline_monetization_on_24"
         android:title="@string/all_currencies" />
     <item
-        android:id="@+id/home"
+        android:id="@+id/my_currencies"
         android:icon="@drawable/ic_baseline_local_atm_24"
         android:title="@string/my_currencies" />
 </menu>
