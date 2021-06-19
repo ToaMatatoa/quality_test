@@ -1,13 +1,13 @@
-package com.example.qualitytest.data
+package com.example.qualitytest.data.remote
 
-import com.example.qualitytest.model.CurrenciesList
+import com.example.qualitytest.data.remote.model.ResponseCurrenciesData
 
 class RemoteCurrenciesDataStore {
 
     private val retrofitCurrenciesService
             by lazy { RetrofitCurrenciesClient.currenciesWebService() }
 
-    suspend fun getNewsList(): List<CurrenciesList> {
+    suspend fun getCurrenciesList(): List<ResponseCurrenciesData> {
         return retrofitCurrenciesService.getCurrencies()
     }
 }

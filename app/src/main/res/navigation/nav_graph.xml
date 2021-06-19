@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/convert_currencies"
-        android:name="com.example.qualitytest.ConvertFragment"
+        android:name="com.example.qualitytest.ConvertCurrenciesFragment"
         android:label="fragment_convert_list"
         tools:layout="@layout/fragment_convert_list" />
 </navigation>
