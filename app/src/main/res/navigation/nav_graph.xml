@@ -6,7 +6,7 @@
     app:startDestination="@id/all_currencies">
     <fragment
         android:id="@+id/all_currencies"
-        android:name="com.example.qualitytest.AllCurrenciesFragment"
+        android:name="com.example.qualitytest.ui.AllCurrenciesFragment"
         android:label="AllCurrenciesFragment" >
         <action
             android:id="@+id/action_allCurrenciesFragment_to_convertFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/my_currencies"
-        android:name="com.example.qualitytest.MyCurrenciesFragment"
+        android:name="com.example.qualitytest.ui.MyCurrenciesFragment"
         android:label="MyCurrenciesFragment" >
         <action
             android:id="@+id/action_myCurrenciesFragment_to_convertFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/convert_currencies"
-        android:name="com.example.qualitytest.ConvertCurrenciesFragment"
+        android:name="com.example.qualitytest.ui.ConvertCurrenciesFragment"
         android:label="fragment_convert_list"
         tools:layout="@layout/fragment_convert_list" />
 </navigation>
