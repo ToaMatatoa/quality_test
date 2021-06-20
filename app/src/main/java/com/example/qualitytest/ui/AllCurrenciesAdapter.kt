@@ -34,7 +34,7 @@ class AllCurrenciesAdapter(private val onItemClicked: () -> Unit) :
 
         fun bind(item: LocalFavouriteData) =
             with(itemView) {
-                currency_name.text = item.rates.toString()
+                all_currency_name.text = item.rates.toString()
             }
     }
 }
