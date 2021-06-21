@@ -10,8 +10,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.qualitytest.R
 import com.example.qualitytest.dummy.DummyContent
+import org.kodein.di.Kodein
+import org.kodein.di.KodeinAware
+import org.kodein.di.KodeinTrigger
+import org.kodein.di.android.x.closestKodein
+import org.kodein.di.generic.kcontext
 
-class ConvertCurrenciesFragment : Fragment() {
+class ConvertCurrenciesFragment : Fragment(), KodeinAware {
+
+    override val kodeinContext = kcontext<Fragment>(this)
+    private val parentKodein: Kodein by closestKodein()
+    override val kodein: Kodein = Kodein.lazy {
+        extend(parentKodein)
+    }
+    override val kodeinTrigger = KodeinTrigger()
 
     private var columnCount = 1
 
@@ -27,6 +39,8 @@ class ConvertCurrenciesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        kodeinTrigger.trigger()
+
         val view = inflater.inflate(R.layout.fragment_convert_list, container, false)
 
         // Set the adapter
