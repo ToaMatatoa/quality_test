@@ -2,7 +2,7 @@ package com.example.qualitytest.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-class ResponseCurrenciesData(
+class ResponseData(
     @SerializedName("rates") var rates: Data
 ) {
     data class Data(

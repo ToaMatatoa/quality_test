@@ -1,21 +1,19 @@
 package com.example.qualitytest.ui
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.qualitytest.data.local.model.LocalFavouriteData
-import com.example.qualitytest.domain.CurrenciesUseCase
+import com.example.qualitytest.data.remote.model.ResponseData
+import com.example.qualitytest.domain.UseCase
 import kotlinx.coroutines.launch
 
-class DataViewModel (private val currenciesUseCase: CurrenciesUseCase) : ViewModel() {
+class DataViewModel (private val useCase: UseCase) : ViewModel() {
 
-    private val liveDataRemote = MutableLiveData<List<LocalFavouriteData>>()
-    val liveDataRemoteProvider: LiveData<List<LocalFavouriteData>> = liveDataRemote
+    private val liveDataRemote = MutableLiveData<List<ResponseData.Data>>()
 
     fun getData() {
         viewModelScope.launch {
-            liveDataRemote.postValue(currenciesUseCase.getData())
+            liveDataRemote.postValue(useCase.getCurrenciesList())
         }
     }
 }

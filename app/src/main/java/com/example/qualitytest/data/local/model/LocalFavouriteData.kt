@@ -7,7 +7,7 @@ import androidx.room.RoomMasterTable.TABLE_NAME
 @Entity(tableName = TABLE_NAME)
 data class LocalFavouriteData(
     @PrimaryKey
-    val rates: List<String>
+    val rates: List<Double>
 ) {
     object Companion {
         const val TABLE_NAME = "localdata"

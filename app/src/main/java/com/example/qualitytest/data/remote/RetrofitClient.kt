@@ -5,13 +5,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitCurrenciesClient {
+object RetrofitClient {
 
     private const val CURRENCIES_URL = "https://api.exchangerate.host/"
     private var retrofit: Retrofit? = null
     private val logging = HttpLoggingInterceptor()
 
-    fun currenciesWebService(): RetrofitCurrenciesService {
+    fun currenciesWebService(): RetrofitService {
 
         logging.level = HttpLoggingInterceptor.Level.BODY
 
@@ -27,6 +27,6 @@ object RetrofitCurrenciesClient {
                 .build()
         }
 
-        return retrofit!!.create(RetrofitCurrenciesService::class.java)
+        return retrofit!!.create(RetrofitService::class.java)
     }
 }
